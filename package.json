@@ -1,0 +1,32 @@
+{
+  "name": "localtag-backend",
+  "version": "1.0.0",
+  "description": "Back-end repo for Local Tag Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patgarcia/localtag-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.4.0",
+    "mocha-junit-reporter": "*",
+    "nodemon": "^2.0.7",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.8"
+  },
+  "bugs": {
+    "url": "https://github.com/patgarcia/localtag-backend/issues"
+  },
+  "homepage": "https://github.com/patgarcia/localtag-backend#readme"
+}
