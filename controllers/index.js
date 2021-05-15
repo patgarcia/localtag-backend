@@ -5,9 +5,9 @@ const router = express.Router();
   collection cards
  =================*/
 
- router('get', (req, res) => {
+ router.get('/', (req, res) => {
   res.send(
-    "THIS WILL RETURN THE COLLECTION OF CARDS"
+    "THIS WILL RETURN THE COLLECTION OF CARDSSSSS"
     )
 })
 
