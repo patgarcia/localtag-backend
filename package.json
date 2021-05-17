@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.12.8"
+    "mongoose": "^5.12.8",
+    "mongoose-type-url": "^2.1.0"
   },
   "bugs": {
     "url": "https://github.com/patgarcia/localtag-backend/issues"
