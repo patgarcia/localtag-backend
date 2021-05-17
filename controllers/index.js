@@ -16,7 +16,7 @@ const router = express.Router();
  =======*/
 
 // User
-router.get('/tag', require('./tag'));
+// Tag
 // Image
 // Location
 // Collection
