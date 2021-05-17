@@ -1,0 +1,135 @@
+[
+    {
+        "lat": "40.745255",
+        "long": "-74.034775",
+        "city": "Hoboken",
+        "state": "New Jersey",
+        "country": "USA"
+    },
+    {
+        "lat": "34.155834",
+        "long": "-119.202789",
+        "city": "Port Hueneme",
+        "state": "California",
+        "country": "USA"
+    },
+    {
+        "lat": "41.392502",
+        "long": "-81.534447",
+        "city": "Bedford",
+        "state": "Ohio",
+        "country": "USA"
+    },
+    {
+        "lat": "27.192223",
+        "long": "-80.243057",
+        "city": "Stuart",
+        "state": "Florida",
+        "country": "USA"
+    },
+    {
+        "lat": "31.442778",
+        "long": "-100.450279",
+        "city": "San Angelo",
+        "state": "Texas",
+        "country": "USA"
+    },
+    {
+        "lat": "38.846668",
+        "long": "-91.948059",
+        "city": "Fulton",
+        "state": "Missouri",
+        "country": "USA"
+    },
+    {
+        "lat": "39.554443",
+        "long": "-119.735558",
+        "city": "Sparks",
+        "state": "Nevada",
+        "country": "USA"
+    },
+    {
+        "lat": "44.513332",
+        "long": "-88.015831",
+        "city": "Green Bay",
+        "state": "Wisconsin",
+        "country": "USA"
+    },
+    {
+        "lat": "41.556110",
+        "long": "-73.041389",
+        "city": "Waterbury",
+        "state": "Connecticut",
+        "country": "USA"
+    },
+    {
+        "lat": "26.709723",
+        "long": "-80.064163",
+        "city": "West Palm Beach",
+        "state": "Florida",
+        "country": "USA"
+    },
+    {
+        "lat": "35.970554",
+        "long": "-79.997498",
+        "city": "High Point",
+        "state": "North Carolina",
+        "country": "USA"
+    },
+    {
+        "lat": "39.799999",
+        "long": "-89.650002",
+        "city": "Springfield",
+        "state": "Illinois",
+        "country": "USA"
+    },
+    {
+        "lat": "42.373611",
+        "long": "-71.110558",
+        "city": "Cambridge",
+        "state": "Massachusetts",
+        "country": "USA"
+    },
+    {
+        "lat": "33.950001",
+        "long": "-83.383331",
+        "city": "Athens",
+        "state": "Georgia",
+        "country": "USA"
+    },
+    {
+        "lat": "40.689167",
+        "long": "-111.993889",
+        "city": "West Valley City",
+        "state": "Utah",
+        "country": "USA"
+    },
+    {
+        "lat": "39.903057",
+        "long": "-104.954445",
+        "city": "Thornton",
+        "state": "Colorado",
+        "country": "USA"
+    },
+    {
+        "lat": "35.846111",
+        "long": "-86.391945",
+        "city": "Murfreesboro",
+        "state": "Tennesee",
+        "country": "USA"
+    },
+    {
+        "lat": "33.630554",
+        "long": "-112.366669",
+        "city": "Surprise",
+        "state": "Arizona",
+        "country": "USA"
+    },
+    {
+        "lat": "37.871666",
+        "long": "-122.272781",
+        "city": "Berkeley",
+        "state": "California",
+        "country": "USA"
+    }
+]
