@@ -18,7 +18,7 @@ const router = express.Router();
 // User
 // Tag
 router.use('/images', require('./images'))
-// Location
+router.use('/locations', require('./locations'))
 // Collection
 // Card
 
