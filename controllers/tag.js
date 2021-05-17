@@ -7,3 +7,5 @@ router.get('/', (req, res) => {
     .then(docs => res.send(docs))
     .catch(console.error)
 })
+
+module.exports = router

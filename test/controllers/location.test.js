@@ -86,10 +86,10 @@ describe("POST /locations", () => {
     })
 })
 
-describe("PUT /locations/:id", () => {
+describe("PATCH /locations/:id", () => {
     it("Returns an object", done => {
         api
-            .put(`/locations/${newID}`)
+            .patch(`/locations/${newID}`)
             .set('Accept', 'application/json')
             .send({"country" : "N"})
             .end((err, res) => {
