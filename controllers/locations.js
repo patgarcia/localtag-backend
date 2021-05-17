@@ -21,13 +21,13 @@ router.get('/:id', (req, res) => {
 })
 
 router.patch('/:id', (req, res) => {
-  Location.findOneAndUpdate({_id: req.params.id}, req.body, {new: true} )
+  Location.findByIdAndUpdate(req.params.id, req.body, {new: true} )
     .then(doc => res.send(doc))
     .catch(console.error)
 })
 
 router.delete('/:id', (req, res) => {
-  Location.findOneAndDelete({_id: req.params.id})
+  Location.findByIdAndDelete(req.params.id)
     .then(doc => res.send(doc))
     .catch(console.error)
 })
