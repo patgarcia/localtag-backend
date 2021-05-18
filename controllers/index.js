@@ -20,6 +20,6 @@ const router = express.Router();
 router.use('/images', require('./images'))
 router.use('/locations', require('./locations'))
 // Collection
-// Card
+router.use('/cards', require('./cards'))
 
 module.exports = router
