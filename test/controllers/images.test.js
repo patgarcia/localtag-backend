@@ -61,7 +61,6 @@ describe('POST /images', () => {
             .get('/images')
             .set('Accept', 'application/json')
             .end((error, response) => {
-                // console.log(response.body)
                 expect(response.body.find(image => image.id === testImage.id)).to.be.an('object')
                 done()
             })
@@ -115,7 +114,7 @@ describe("DELETE /images/:id", () => {
             .get('/images')
             .set('Accept', 'application/json')
             .end((err, res) => {
-                expect(res.body.find(location => location["_id"] === newID)).to.be.undefined
+                expect(res.body.find(image => image["_id"] === newID)).to.be.undefined
             })
             done()
     })
