@@ -5,6 +5,16 @@ Local Tag is an app which allows user to upload their photos to a publicly avail
 
 ## Brief Example
 
+## Planning Process
+We began by brainstorming together.
+![miro planning](https://i.imgur.com/INT2cmc.png)
+![miro planning](https://i.imgur.com/AeMsVxF.png)
+
+Then we moved to wireframes.
+![figma planning](https://i.imgur.com/thgIFIm.png)
+![figma planning](https://i.imgur.com/8s1z4ev.png)
+![server map](https://i.imgur.com/aXsnELK.png)
+
 ## List of Features / User Stories
 - As the user I want to receive up-to-date and relevant data about my query.
 - As the user I want a seamless experience with no dead space, pages, or loading times.
@@ -28,6 +38,7 @@ Local Tag is an app which allows user to upload their photos to a publicly avail
 - Markdown
 
 ### Libraries
+- bcryptjs
 - chai
 - chai-http
 - express
