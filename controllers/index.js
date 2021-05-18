@@ -19,7 +19,7 @@ const router = express.Router();
 router.use('/tags', require('./tags'));
 router.use('/images', require('./images'));
 router.use('/locations', require('./locations'));
-// Collection
+router.use('/collections', require('./collections'))
 router.use('/cards', require('./cards'))
 
 module.exports = router
