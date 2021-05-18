@@ -87,7 +87,7 @@ describe("PATCH /images/:id", () => {
             .set('Accept', 'application/json')
             .send({"description": "patched description"})
             .end((err, res) => {
-                expect(res).to.be.an.an('object')
+                expect(res).to.be.an('object')
             })
             done()
     })
