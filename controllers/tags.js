@@ -34,7 +34,7 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-  Tag.findByIdAndDelete(req.params.id, {new: true})
+  Tag.findByIdAndDelete(req.params.id)
     .then(doc => res.send(doc))
     .catch(console.error)
 })

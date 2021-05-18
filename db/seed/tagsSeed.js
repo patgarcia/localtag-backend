@@ -6,3 +6,4 @@ Tag.deleteMany({})
   .then(console.log)
   .catch(console.error)
   .finally(() => process.exit())
+  
