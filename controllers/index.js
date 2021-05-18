@@ -16,7 +16,7 @@ const router = express.Router();
  =======*/
 
 // User
-// Tag
+router.use('/tags', require('./tags'))
 router.use('/images', require('./images'))
 router.use('/locations', require('./locations'))
 router.use('/collections', require('./collections'))
