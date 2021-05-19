@@ -11,13 +11,12 @@ const cardSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: 'User'
         },
-        hashtag: String,
         location: {
             type: Schema.Types.ObjectId,
             ref: 'Location'
         },
         vote_tally: Number,
-        represents_collection: Boolean,
+        is_collection_card: Boolean,
         collectionID: String,
     },
     {timestamps: true}
