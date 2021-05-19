@@ -34,7 +34,11 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
+<<<<<<< HEAD
   Tag.findByIdAndDelete(req.params.id)
+=======
+  Tag.findByIdAndDelete(req.params.id, {new: true})
+>>>>>>> Added Tag controllers, seed data and route
     .then(doc => res.send(doc))
     .catch(console.error)
 })
