@@ -17,7 +17,10 @@ const cardSchema = new Schema(
         },
         vote_tally: Number,
         is_collection_card: Boolean,
-        collectionID: String,
+        collection_id: {
+            type: Schema.Types.ObjectId,
+            ref: 'Collection'
+        },
     },
     {timestamps: true}
 )
