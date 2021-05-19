@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 const collectionSchema = new Schema(
     {
       name: String,
-      cover_card: {
-          type: Schema.Types.ObjectId,
-          ref: 'Card'
-      },
       owner: {
           type: Schema.Types.ObjectId, 
           ref: 'User'
