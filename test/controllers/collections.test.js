@@ -28,7 +28,7 @@ describe("GET /collections", () => {
                 done()
             })
     })
-    it("Objects have 'name' 'cover_card' 'owner' 'location' and 'tag'", done => {
+    it("Objects have 'name' 'tag' 'owner' 'location' and '__v'", done => {
 
         api
             .get("/collections")
@@ -36,10 +36,10 @@ describe("GET /collections", () => {
             .end((err, res) => {
                 res.body.forEach(doc => {
                     expect(doc).to.have.property('name')
-                    expect(doc).to.have.property('cover_card')
+                    expect(doc).to.have.property('tag')
                     expect(doc).to.have.property('owner')
                     expect(doc).to.have.property('location')
-                    expect(doc).to.have.property('tag')
+                    expect(doc).to.have.property('__v')
                 })
                 done()
             })
@@ -62,21 +62,20 @@ describe("POST /collections", () => {
             .get('/collections')
             .set('Accept', 'application/json')
             .end((err, res) => {
-                expect(res.body.find(collection => collection.location === newLocation.location)).to.be.an('object')
+                expect(res.body.find(collection => collection.name === newCollection.name)).to.be.an('object')
             })
             done()
     })
-    it("New object has 'name' 'cover_card' 'owner' 'location' and 'tag'", done => {
+    it("New object has 'name' '__v' 'createdAt'  and 'updatedAt'", done => {
         api
             .get('/collections')
             .set('Accept', 'application/json')
             .end((err, res) => {
-                newObj = res.body.find(collection => collection["_id"] === newID)
+                const newObj = res.body.find(collection => collection["_id"] === newID)
                 expect(newObj).to.have.property('name')
-                expect(newObj).to.have.property('cover_card')
-                expect(newObj).to.have.property('owner')
-                expect(newObj).to.have.property('location')
-                expect(newObj).to.have.property('tag')
+                expect(newObj).to.have.property('__v')
+                expect(newObj).to.have.property('createdAt')
+                expect(newObj).to.have.property('updatedAt')
             })
             done()
     })
@@ -109,7 +108,10 @@ describe("DELETE /collections/:id", () => {
         api
             .delete(`/collections/${newID}`)
             .set('Accept', 'application/json')
-            .end(done)
+            .end((err, res) => {
+                expect(res.body).to.be.an('object')
+            })
+            done()
     })
     it("Object is deleted", done => {
         api
