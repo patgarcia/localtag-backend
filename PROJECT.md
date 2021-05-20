@@ -1,7 +1,7 @@
 # local Tag
 
 ## Description
-Local Tag is an app which allows user to upload their photos to a publicly available collection. The tag system gives the options of including a tag and a location. Users are able to edit the tags of their images.
+Local Tag is an app that allows user to upload their photos to a publicly available collection. The tag system gives the options of including a tag and a location. Users are able to edit the tags of their images.
 
 ## Brief Example
 
@@ -41,11 +41,16 @@ Then we moved to wireframes.
 - bcryptjs
 - chai
 - chai-http
+- connect-mongodb-session
+- cookie-session
+- cors
 - express
+- express-session
 - material-ui
 - mocha
-- mocha-junit-report
+- mocha-junit-reporter
 - mongoose
+- mongoose-type-email
 - mongoose-type-url
 - nodemon
 - react
