@@ -1,11 +1,13 @@
 // Init
 const express = require('express');
 const app = express();
+const helmet = require('helmet');
+const cors = require('cors');
 
 // Options
+app.use(helmet())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const cors = require('cors');
 app.use(cors());
 
 // Routes
