@@ -1,32 +1,18 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import Header from './Header';
-import Main from './Main';
-import Home from './Home';
+import Header from './components/Header';
+import Main from './components/Main';
+
 
 
 
 const  App = () => {
   return (
-    <Grid container direction="column">
-      <Header />
-      <Main />
-    </Grid>
-
-    //    <Grid item>
-    //       <Logo />
-    //    </Grid>
-
-    //    <Grid item container>
-    //      <Grid item xs={false} sm={2} />
-    //      <Grid item xs={12} sm={8}>
-    //       <Content />
-    //    </Grid>
-    //    <Grid item xs={false} sm={2} />
-    //    </Grid>
-
+     <Grid container direction="column">
+       <Header />
+       <Main />
+     </Grid>
   );
 }
 
 export default App;
-
