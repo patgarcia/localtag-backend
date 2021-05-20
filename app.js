@@ -1,20 +1,23 @@
 // Init
+const connection = require('./db/connection')
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
-const { Store } = require('express-session');
-const mongoStore = require('connect-mongodb-session')(session);
+const userMiddleware = require('./middlewares/users')
+const mongoStore = require('connect-mongo');
 
+// Static
+app.use(express.static(__dirname + 'public/'));
 
 // Session store
 mongoURI = 
   process.env.NODE_ENV === 'production' ?
   process.env.DB_URL : 
   'mongodb://localhost/localtag';
-const store = new mongoStore({
-  uri: mongoURI,
+const store = mongoStore.create({
+  mongoUrl: mongoURI,
   collection: 'sessions'
 })
 
@@ -24,20 +27,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(session({
-  secret: 'some secret', // TODO: Add env var logic
+  secret: '343ji43j4n3jn4jk3n',
+  store: store,
   cookie: {
-    secure: true,
-    httpOnly: true,
     maxAge: 1000 * 60 * 60 * 24, // a day
   },
-  store: store,
-  resave: true,
+  resave: false,
   saveUninitialized: true
 }));
-
-// Routes
-app.use(express.static(__dirname + 'public/'));
-
+app.use(userMiddleware)
 // Middleware
 // Users middleware
 
