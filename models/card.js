@@ -1,5 +1,4 @@
 const mongoose = require('../db/connection');
-const Tag = require('./tag');
 const Schema = mongoose.Schema;
 
 const cardSchema = new Schema(
