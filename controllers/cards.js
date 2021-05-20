@@ -3,9 +3,20 @@ const router = express.Router()
 const Card = require('../models/card')
 
 router.get('/', (req, res) => {
+let detail = req.query.detail
+  if(detail == 'true'){
+    Card.find().then(cards => {
+      Promise.all(cards.map(card => {
+          return card.populateProperties()
+            .then(doc => doc)
+        })).then(data => res.send(data))
+      })
+  }
+  else(
     Card.find()
         .then(docs => res.send(docs))
         .catch(console.error)
+  )
 })
 
 router.post('/', (req, res) => {
