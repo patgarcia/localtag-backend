@@ -4,6 +4,7 @@ const app = express();
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
+const { Store } = require('express-session');
 const mongoStore = require('connect-mongodb-session')(session);
 
 
@@ -23,7 +24,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(session({
-  
+  secret: 'some secret', // TODO: Add env var logic
+  cookie: {
+    secure: true,
+    httpOnly: true,
+    maxAge: 1000 * 60 * 60 * 24, // a day
+  },
+  store: store,
+  resave: true,
+  saveUninitialized: true
 }));
 
 // Routes
