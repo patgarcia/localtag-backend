@@ -4,13 +4,27 @@ const app = express();
 const helmet = require('helmet');
 const cors = require('cors');
 const session = require('express-session');
+const mongoStore = require('connect-mongodb-session')(session);
+
+
+// Session store
+mongoURI = 
+  process.env.NODE_ENV === 'production' ?
+  process.env.DB_URL : 
+  'mongodb://localhost/localtag';
+const store = new mongoStore({
+  uri: mongoURI,
+  collection: 'sessions'
+})
 
 // Options
 app.use(helmet())
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(session());
+app.use(session({
+  
+}));
 
 // Routes
 app.use(express.static(__dirname + 'public/'));
