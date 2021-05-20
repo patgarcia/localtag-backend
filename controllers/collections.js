@@ -3,9 +3,20 @@ const router = express.Router();
 const Collection = require('../models/collection')
 
 router.get('/', (req, res) => {
+  let detail = req.query.detail
+  if(detail == 'true'){
+    Collection.find().then(collections => {
+      Promise.all(collections.map(coll => {
+          return coll.populateProperties()
+            .then(doc => doc)
+        })).then(data => res.send(data))
+      })
+  }
+  else(
   Collection.find()
     .then(docs => res.send(docs))
     .catch(console.error)
+  )
 })
 
 router.post('/', (req, res) => {
