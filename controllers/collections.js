@@ -26,9 +26,18 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+  let detail = req.query.detail
+  if(detail == 'true'){
+    Collection.findById(req.params.id).then(collection => {
+      return collection.populateProperties()
+        .then(doc => doc)
+    }).then(data => res.send(data))
+  }
+  else(
   Collection.findById(req.params.id)
     .then(doc => res.send(doc))
     .catch(console.error)
+  )
 })
 
 router.patch('/:id', (req, res) => {
