@@ -27,7 +27,7 @@
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-session": "^1.17.1",
+    "express-session": "^1.17.2",
     "mongoose": "^5.12.8",
     "mongoose-type-email": "^1.1.2",
     "mongoose-type-url": "^2.1.0"
