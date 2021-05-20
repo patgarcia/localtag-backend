@@ -1,7 +1,4 @@
 const mongoose = require('../db/connection');
-const User = require('./user')
-const Location = require('./location')
-const Tag = require('./tag')
 const Schema = mongoose.Schema;
 
 const collectionSchema = new Schema(
