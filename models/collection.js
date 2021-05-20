@@ -20,6 +20,19 @@ const collectionSchema = new Schema(
     { timestamps: true }
 );
 
+collectionSchema.methods.populateProperties = async function () {
+    const coll = this;
+    const Tag = require('./tag');
+    const Location = require('./location');
+    return Location.findById(coll.location).then(locationDoc => {
+        return Tag.findById(coll.tag).then(tagDoc => {
+            coll.location = locationDoc;
+            coll.tag = tagDoc;
+        })
+        .then(() => coll)
+    })
+};
+
 const Collection = mongoose.model('Collection', collectionSchema);
 
 module.exports = Collection
