@@ -16,7 +16,10 @@ const collectionSchema = new Schema(
           type: Schema.Types.ObjectId,
           ref: 'Tag'
       },
-      image: {}  
+      image: {
+          type: Schema.Types.ObjectId,
+          ref:'Image'
+      }  
     },
     { timestamps: true }
 );
