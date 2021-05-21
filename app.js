@@ -44,6 +44,9 @@ app.use(userMiddleware)
 // Controllers
 app.use(require('./controllers'))
 
+
+const port = 
+  process.env.NODE_ENV === 'production' ?
+  process.env.PORT : 4000;
 // Listen
-const port=4000;
-app.listen(port, () => console.log(`app running on port ${port}`));
+app.listen(port, '0.0.0.0');
