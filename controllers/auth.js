@@ -20,16 +20,21 @@ router.post('/signup', (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-  console.log(req.body.password, req.body.email);
-  const user = await User.findOne({email: req.body.email});
-  const pwdIsCorrect = await user.compPwd(req.body.password);
-  if(pwdIsCorrect){  
-    req.session.user = user._id;
-    res.send(`password is correct ${req.session.user}`)
-  }else{
-    res.status(403).send("Incorrect password")
-  }
-})
+    // console.log(req.body.password, req.body.email);
+    const user = await User.findOne({ email: req.body.email }, (err, doc) => {
+        if (err) console.log(err);
+        if (!doc) res.status(404).send('Email does not exist');
+    });
+    if (!user) return;
+    const pwdIsCorrect = await user.compPwd(req.body.password);
+    // console.log("pwdIsCorrect", pwdIsCorrect)
+    if (pwdIsCorrect) {
+        req.session.user = user._id;
+        res.send(`password is correct ${req.session.user}`);
+    } else {
+        res.status(403).send('Incorrect password');
+    }
+});
 
 router.patch('/update', async (req, res) => {
   const user = await User.findOne({email: req.body.email});

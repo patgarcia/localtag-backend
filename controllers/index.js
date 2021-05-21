@@ -9,14 +9,12 @@ const auth = require('../middlewares/auth')
  router.get('/', auth, (req, res) => {
    if(req.session.count) req.session.count++;
    else req.session.count = 1;
-  
     if(req.session && req.user){
-      res.send(`Hey there ${req.user.display_name}`)
+      res.send(`${req.user.display_name} ${req.session.count}`)
     }
     else {
-      res.send('Hello, please sign in')
+      res.send(`Hello, please sign in ${req.session.count}`)
     }
-  
 })
 
 /*======

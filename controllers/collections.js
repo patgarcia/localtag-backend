@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Collection = require('../models/collection')
+const auth = require('../middlewares/auth')
+
 
 router.get('/', (req, res) => {
   let detail = req.query.detail
