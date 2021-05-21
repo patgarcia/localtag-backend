@@ -15,7 +15,8 @@ const collectionSchema = new Schema(
       tag: {
           type: Schema.Types.ObjectId,
           ref: 'Tag'
-      }  
+      },
+      image: {}  
     },
     { timestamps: true }
 );
@@ -24,12 +25,15 @@ collectionSchema.methods.populateProperties = async function () {
     const coll = this;
     const Tag = require('./tag');
     const Location = require('./location');
+    const Image = require('./image')
     return Location.findById(coll.location).then(locationDoc => {
         return Tag.findById(coll.tag).then(tagDoc => {
-            coll.location = locationDoc;
-            coll.tag = tagDoc;
-        })
-        .then(() => coll)
+            return Image.findById(coll.image).then(imageDoc => {
+                coll.location = locationDoc;
+                coll.tag = tagDoc;
+                coll.image = imageDoc
+            }).then(() => coll)     
+        }) 
     })
 };
 
