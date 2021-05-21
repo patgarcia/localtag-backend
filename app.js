@@ -30,12 +30,14 @@ app.use(session({
   secret: '343ji43j4n3jn4jk3n',
   store: store,
   cookie: {
+    secure: false,
     maxAge: 1000 * 60 * 60 * 24, // a day
   },
-  resave: false,
+  resave: true,
   saveUninitialized: true
 }));
 app.use(userMiddleware)
+
 // Middleware
 // Users middleware
 

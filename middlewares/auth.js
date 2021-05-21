@@ -1,4 +1,7 @@
 module.exports = (req, res, next) => {
   if(req.user) next();
-  else res.status(403).end()
+  else {
+    console.log("failling auth")
+    res.status(403).send("failing auth").end()
+  }
 }
